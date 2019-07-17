@@ -2,11 +2,23 @@ name := "Clickster"
 
 version := "0.1"
 
-scalaVersion := "2.13.0"
+scalaVersion := "2.12.8"
+
+val akkaVersion = "2.5.20"
+val akkaHttpVersion = "10.1.7"
+val scalaTestVersion = "3.0.5"
 
 libraryDependencies ++= Seq(
-  "com.typesafe.akka" %% "akka-stream" % "2.5.23",
-  "com.typesafe.akka" %% "akka-stream-testkit" % "2.5.23" % Test,
-  "com.typesafe.akka" %% "akka-testkit" % "2.5.23" % Test,
-  "com.typesafe.akka" %% "akka-http"   % "10.1.9"
+  // akka streams
+  "com.typesafe.akka" %% "akka-stream" % akkaVersion,
+  // akka http
+  "com.typesafe.akka" %% "akka-http" % akkaHttpVersion,
+  "com.typesafe.akka" %% "akka-http-spray-json" % akkaHttpVersion,
+  "com.typesafe.akka" %% "akka-http-testkit" % akkaHttpVersion,
+  // testing
+  "com.typesafe.akka" %% "akka-testkit" % akkaVersion,
+  "org.scalatest" %% "scalatest" % scalaTestVersion,
+
+  // JWT
+  "com.pauldijou" %% "jwt-spray-json" % "2.1.0"
 )
